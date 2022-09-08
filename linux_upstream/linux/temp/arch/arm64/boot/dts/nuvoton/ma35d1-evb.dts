@@ -1,0 +1,84 @@
+// SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+/*
+ * Device Tree Source for MA35D1 Evaluation Board (EVB)
+ *
+ * Copyright (C) 2022 Nuvoton Technology Corp.
+ */
+
+/dts-v1/;
+#include "ma35d1.dtsi"
+
+/ {
+	model = "Nuvoton MA35D1-EVB";
+	compatible = "nuvoton,ma35d1-evb", "nuvoton,ma35d1";
+
+	chosen {
+		bootargs = "earlycon";
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory@80000000 {
+		device_type = "memory";
+		reg = <0x0 0x80000000 0x0 0x10000000>;
+	};
+	
+	gpio_keys_test {
+		compatible = "gpio-keys";
+		status = "okay";
+		autorepeat;
+		botton0 {
+			label = "Key Down";
+			linux,code = <KEY_DOWN>;
+			gpios = <&gpiod 8 GPIO_ACTIVE_LOW>;
+			wakeup-source;
+		};
+		button1{
+			label ="Key Up";
+			linux,code = <KEY_UP>;
+			gpios = <&gpiod 9 GPIO_ACTIVE_LOW>;
+			wakeup-source;
+		};
+		button2{
+			label ="Key Up";
+			linux,code = <KEY_ENTER>;
+			gpios = <&gpiof 14 GPIO_ACTIVE_LOW>;
+			wakeup-source;
+		};
+	};
+
+	gpio_leds_test {
+		compatible = "gpio-leds";
+		status = "okay";
+		led0 {
+			label = "LED0";
+			gpios = <&gpioj 14 GPIO_ACTIVE_LOW>;
+		};
+		led1 {
+			label = "LED2";
+			gpios = <&gpioj 15 GPIO_ACTIVE_LOW>;
+		};
+	};
+};
+
+&pinctrl {
+	uart11 {
+		pinctrl_uart11: uart11grp{
+			nuvoton,pins =
+				<SYS_GPL_MFPL_PL0MFP_UART11_nCTS	&pcfg_default>,
+				<SYS_GPL_MFPL_PL1MFP_UART11_nRTS	&pcfg_default>,
+				<SYS_GPL_MFPL_PL2MFP_UART11_RXD	&pcfg_default>,
+				<SYS_GPL_MFPL_PL3MFP_UART11_TXD	&pcfg_default>;
+		};
+	};
+};
+
+&uart2 {
+	status = "okay";
+};
+
+&uart11 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart11>;
+};
+

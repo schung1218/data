@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/arm/nuvoton.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Nuvoton Platforms Device Tree Bindings
+
+maintainers:
+  - Jacky Huang <ychuang3@nuvoton.com>
+  - Shan-Chun Hung <schung@nuvoton.com>
+
+description: |
+  Boards with an ARMv8 based Nuvoton SoC shall have the following
+  properties.
+
+properties:
+  $nodename:
+    const: '/'
+  compatible:
+    oneOf:
+
+      - description: MA35D1 based boards
+        items:
+          - enum:
+              - nuvoton,ma35d1-iot
+          - const: nuvoton,ma35d1
+
+additionalProperties: true
+...

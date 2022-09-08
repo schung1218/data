@@ -1,0 +1,1 @@
+cmd_drivers/clk/nuvoton/built-in.a := rm -f drivers/clk/nuvoton/built-in.a; echo clk-ma35d1.o clkdivider-ma35d1.o clk-ma35d1-pll.o | sed -E 's:([^ ]+):drivers/clk/nuvoton/\1:g' | xargs aarch64-poky-linux-ar cDPrST drivers/clk/nuvoton/built-in.a

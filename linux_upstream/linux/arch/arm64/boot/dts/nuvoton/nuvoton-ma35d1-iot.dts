@@ -1,0 +1,47 @@
+// SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+/*
+ * Device Tree Source for MA35D1 IoT(Infternet of Things) Board
+ *
+ * Copyright (C) 2022 Nuvoton Technology Corp.
+ */
+
+/dts-v1/;
+#include "ma35d1.dtsi"
+
+/ {
+	model = "Nuvoton MA35D1-IOT";
+	compatible = "nuvoton,ma35d1-iot", "nuvoton,ma35d1";
+
+	chosen {
+		bootargs = "earlycon";
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory@80000000 {
+		device_type = "memory";
+		reg = <0x0 0x80000000 0x0 0x10000000>;
+	};
+};
+
+&pinctrl {
+	uart11 {
+		pinctrl_uart11: uart11grp{
+			nuvoton,pins =
+				<SYS_GPL_MFPL_PL0MFP_UART11_nCTS	&pcfg_default>,
+				<SYS_GPL_MFPL_PL1MFP_UART11_nRTS	&pcfg_default>,
+				<SYS_GPL_MFPL_PL2MFP_UART11_RXD		&pcfg_default>,
+				<SYS_GPL_MFPL_PL3MFP_UART11_TXD		&pcfg_default>;
+		};
+	};
+};
+
+&uart2 {
+	status = "okay";
+};
+
+&uart11 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart11>;
+};
+
