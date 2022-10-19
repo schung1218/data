@@ -285,7 +285,7 @@ static int read_frame(char * filename)
 			} 
 		sleep(1);
 		}
-
+		printf("get frame\n");
 		unsigned int *pRGB32 = (unsigned int *)buffers[buf.index].start;
 
 		if(LCD_WIDTH>OUT_WIDTH)

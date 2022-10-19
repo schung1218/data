@@ -79,14 +79,14 @@ static int bypass = 0;
 #endif
 
 
-#if 0
+#if 1
 #define OUT_WIDTH      1280             //CMOS sensor width pixels
 #define OUT_HEIGHT      720             //CMOS sensor height pixels
 #define LCD_WIDTH      1024             //LCD panel width pixels
 #define LCD_HEIGHT      600             //LCD panel height pixels
 #endif
 
-#if 1
+#if 0
 #define OUT_WIDTH      1024             //CMOS sensor width pixels
 #define OUT_HEIGHT      600             //CMOS sensor height pixels
 #define LCD_WIDTH      1024             //LCD panel width pixels
