@@ -910,8 +910,8 @@ static unsigned long ov5640_calc_sys_clk(struct ov5640_dev *sensor,
 
 out:
 	printk("=========>best_sysdiv %d\n",best_sysdiv);
-//	*sysdiv = best_sysdiv+1;
-	*sysdiv = best_sysdiv;
+	*sysdiv = best_sysdiv+1;
+//	*sysdiv = best_sysdiv;
 	*pll_prediv = OV5640_PLL_PREDIV;
 	*pll_mult = best_mult;
 
