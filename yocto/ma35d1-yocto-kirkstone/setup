@@ -1,0 +1,1 @@
+DISTRO=nvt-ma35d1-directfb MACHINE=numaker-som-ma35d16a81 source sources/init-build-env build
