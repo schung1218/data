@@ -36,3 +36,5 @@ $ . setup numaker-som-ma35d16a81 build
 $ bitbake obmc-phosphor-image
 
 ```
+
+# OpenBMC Login Default ID: Root PASSWORD: 0penBMC
