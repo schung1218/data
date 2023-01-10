@@ -6,7 +6,7 @@
   <remote fetch="https://github.com/openbmc" name="obmc"/>
   <remote fetch="https://github.com/meta-qt5" name="qt"/>
   <project remote="obmc" name="openbmc" revision="61a2d43a172b70aa34fd7ec33fc048a211fa5c4c" upstream="dunfell" path="openbmc"/>
-  <project remote="nuvoton" name="MA35D1_Yocto-v3.1.3" revision="master" path="openbmc/meta-ma35d1"/>
+  <project remote="nuvoton" name="MA35D1_Yocto-v3.1.3" revision="50f78197c9ef5d5936d2b23fe038c573ffcaecd9" path="openbmc/meta-ma35d1"/>
   <project remote="qt" name="meta-qt5" revision="b4d24d70aca75791902df5cd59a4f4a54aa4a125" upstream="dunfell" path="openbmc/meta-ma35d1/meta-qt5"/>
 
 </manifest>

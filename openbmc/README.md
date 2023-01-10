@@ -4,7 +4,7 @@ numaker-som-ma35d16a81
 ```
 # Using repo to download source
 ```
-$ repo init -u ttps://github.com/schung1218/data.git -m openbmc/openbmc_ma35d1.xml
+$ repo init -u https://github.com/schung1218/data.git -m openbmc/openbmc_ma35d1.xml
 $ repo sync
 ```
 ###### NOTE: 
@@ -32,9 +32,15 @@ To build and use the yocto, do the following:
 ```
 $ repo init -u https://github.com/schung1218/data.git -m openbmc/openbmc_ma35d1.xml
 $ repo sync
-$ . setup numaker-som-ma35d16a81 build
+$ . meta-ma35d1/init-openbmc-env numaker-som-ma35d16a81 build
 $ bitbake obmc-phosphor-image
 
 ```
 
-# OpenBMC Login Default ID: Root PASSWORD: 0penBMC
+# OpenBMC Login Default USER: Root PASSWORD: 0penBMC
+
+
+###### NOTE:
+$ cd openbmc/meta-ma35d1
+$ git am 0001-Support-OpenBmc.patch -3
+$ cd ../
