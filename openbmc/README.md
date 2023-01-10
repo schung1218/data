@@ -37,7 +37,7 @@ $ bitbake obmc-phosphor-image
 
 ```
 
-# OpenBMC Login Default USER: Root PASSWORD: 0penBMC
+# OpenBMC Login Default USER: root PASSWORD: 0penBmc
 
 
 ###### NOTE:
