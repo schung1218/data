@@ -41,6 +41,6 @@ $ bitbake obmc-phosphor-image
 
 
 ###### NOTE:
+```
 $ cd openbmc/meta-ma35d1
 $ git am 0001-Support-OpenBmc.patch -3
-$ cd ../
